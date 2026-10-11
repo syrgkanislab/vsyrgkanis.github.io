@@ -119,6 +119,10 @@ a:focus-visible {
 	color: var(--stanford-red);
 }
 
+.nav-toggle {
+	display: none;
+}
+
 main section[id] {
 	scroll-margin-top: var(--site-header-height, 77px);
 }
@@ -943,6 +947,74 @@ h1 {
 	text-decoration: underline;
 }
 
+.header-inner nav a {
+	white-space: nowrap;
+}
+
+.site-header.nav-collapsed .nav-toggle {
+	display: grid;
+	width: 40px;
+	height: 40px;
+	place-items: center;
+	padding: 0;
+	border: 1px solid var(--line);
+	background: transparent;
+	cursor: pointer;
+}
+
+.nav-toggle span,
+.nav-toggle span::before,
+.nav-toggle span::after {
+	display: block;
+	width: 20px;
+	height: 2px;
+	background: #383a3d;
+	content: "";
+}
+
+.nav-toggle span {
+	position: relative;
+}
+
+.nav-toggle span::before,
+.nav-toggle span::after {
+	position: absolute;
+	left: 0;
+}
+
+.nav-toggle span::before {
+	top: -6px;
+}
+
+.nav-toggle span::after {
+	top: 6px;
+}
+
+.site-header.nav-collapsed .header-inner nav {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	left: 0;
+	display: none;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	gap: 0;
+	padding: 0 20px 8px;
+	background: var(--paper);
+	border-bottom: 1px solid var(--line);
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.site-header.nav-collapsed .header-inner nav.open {
+	display: flex;
+}
+
+.site-header.nav-collapsed .header-inner nav a {
+	padding: 12px 0;
+	border-top: 1px solid var(--line);
+	font-size: 14px;
+}
+
 @media (max-width: 720px) {
 	.section-shell,
 	.header-inner {
@@ -951,15 +1023,6 @@ h1 {
 
 	.header-inner {
 		min-height: 68px;
-	}
-
-	.header-inner nav {
-		max-width: calc(100% - 52px);
-		gap: 8px 12px;
-	}
-
-	.header-inner nav a {
-		font-size: 12px;
 	}
 
 	.advising-grid {
