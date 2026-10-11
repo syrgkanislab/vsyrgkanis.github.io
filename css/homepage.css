@@ -1067,7 +1067,7 @@ h1 {
 	.hero {
 		grid-template-columns: 1fr;
 		gap: 34px;
-		padding-block: 60px 64px;
+		padding-block: 32px 64px;
 	}
 
 	.hero-side {
