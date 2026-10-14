@@ -6,6 +6,7 @@ if (publicationSearch) {
 	const publicationYears = [...document.querySelectorAll(".publication-year")];
 	const publicationItems = publicationYears.flatMap((year) => [...year.querySelectorAll("li")]);
 	const workingPaperTitles = new Set([
+		"Inference on the Value of Policy Improvement in Adaptive Experiments",
 		"Measuring Gift Card Program Incrementality via Causal Data Fusion",
 		"Simultaneous Inference for Local Structural Parameters with Random Forests",
 		"Taking a Moment for Distributional Robustness",
